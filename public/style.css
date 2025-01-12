@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.todo-list{
+    background-color: white;
+    box-shadow: 4px 4px 6px white,-4px -4px 6px white;
+    min-height: 70%;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 20px;
+}
+.heading{
+    text-align: center;
+}
+.todo-list *{
+    margin-bottom: 10px;
+}
+.input #ip-field{
+    font-size: 20px;
+    border: 1px solid rgb(150, 150, 150);
+    padding: 10px 20px;
+    background-color: rgb(150, 150, 150);
+    border-radius: 4px;
+    color: white;
+}
+.input .add{
+    font-size: 20px;
+    border: 1px solid red;
+    padding: 10px 20px;
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4px 2px;
+    margin-bottom: 4px;
+    font-size: 20px;
+}
+.task .delete{
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+.line-through{
+    text-decoration: line-through;
+    color: gray;
+}
+@media screen and  (max-width: 450px){
+    .todo-list{
+        width: 100vw;
+        height: 100vh;
+    }
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .input *{
+        margin-right: 4px;
+    }
+}
