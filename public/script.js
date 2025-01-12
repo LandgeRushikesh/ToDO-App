@@ -96,7 +96,7 @@ async function fetchTasks() {
       taskList.innerHTML = "<h2>Tasks:</h2>";
 
       if (tasks.length === 0) {
-        taskList.innerHTML += '<p style="font-size:20px; font-weight:bold; text-align:center;">NO-record</p>';
+        taskList.innerHTML += '<p style="font-size:20px; font-weight:bold; text-align:center;">NO-RECORD</p>';
     } else{
         // Create the HTML for all tasks using a template literal
         tasks.forEach((task) => {
