@@ -95,19 +95,22 @@ async function fetchTasks() {
       // Clear current tasks in the UI
       taskList.innerHTML = "<h2>Tasks:</h2>";
 
-      // Create the HTML for all tasks using a template literal
-      tasks.forEach((task) => {
-        taskList.innerHTML += `
-            <div class="task" data-id="${task._id}">
-              <input type="checkbox" class="complete" ${
-                task.completed ? "checked" : ""
-              }>
-              <p class="taskName ${task.completed ? 'line-through' : ''}">${task.Task}</p>
-              <button class="delete"><i class="fa-solid fa-trash"></i></button>
-            </div>
-          `;
-      });
-
+      if (tasks.length === 0) {
+        taskList.innerHTML += '<p style="font-size:20px; font-weight:bold; text-align:center;">NO-record</p>';
+    } else{
+        // Create the HTML for all tasks using a template literal
+        tasks.forEach((task) => {
+            taskList.innerHTML += `
+                <div class="task" data-id="${task._id}">
+                <input type="checkbox" class="complete" ${
+                    task.completed ? "checked" : ""
+                }>
+                <p class="taskName ${task.completed ? 'line-through' : ''}">${task.Task}</p>
+                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
+        });
+      }
       // Re-attach checkbox listeners after adding tasks to UI
       attachCheckboxListeners();
 
